@@ -1,0 +1,28 @@
+@import "../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@import "documents/edit";
+
+.page-header {
+    margin-top: 20px;
+}
+
+/*
+ * Image button for sign in with Google.
+ */
+img.google-sign-in {
+    width: 193px;
+}
+
+/*
+ * User's avatar in the navbar.
+ */
+.user-avatar {
+
+    border-radius: 50%;
+    margin-top: 11px;
+    overflow: hidden;
+    width: 2em;
+
+    img {
+        width: 100%;
+    }
+}
