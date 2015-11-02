@@ -12,7 +12,7 @@
         <h3>{{ $doc->name }}</h3>
         Share: <a href="{{ $doc->url() }}">{{ $doc->url() }}</a>
 
-        @if (Auth::user()->owns($doc))
+        @if (Auth::check() && Auth::user()->owns($doc))
             <a href="{{ route('documents.edit', $doc->uuid) }}" class="btn btn-default">
                 <i class="glyphicon glyphicon-pencil"></i>
                 Edit
