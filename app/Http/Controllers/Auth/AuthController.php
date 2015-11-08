@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\User;
 use Auth;
+use Flash;
+use Illuminate\Http\Request;
 use Socialite;
 
 class AuthController extends Controller
@@ -14,8 +16,14 @@ class AuthController extends Controller
         return Socialite::driver($provider)->redirect();
     }
 
-    public function login($provider)
+    public function login(Request $request, $provider)
     {
+        if ($request->error) {
+            Flash::error("Fail to authenticate using {$provider}: " . $request->error);
+
+            return redirect('/');
+        }
+
         $remoteUser = Socialite::driver($provider)->user();
 
         $user = User::where('email', '=', $remoteUser->email)->first();

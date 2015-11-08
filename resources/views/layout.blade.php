@@ -11,6 +11,7 @@
     @include('partials.navbar')
 
     <div class="@section('container-class') container-fluid @show">
+        @include('flash::message')
         @yield('content')
     </div>
 
