@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Document;
+use Flash;
 use Illuminate\Http\Request;
 
 class DocumentsController extends Controller
@@ -44,6 +45,8 @@ class DocumentsController extends Controller
         ]);
 
         $request->user()->documents()->save($doc);
+
+        Flash::success("Document \"{$doc->name}\" has been created.");
 
         return redirect()->route('documents.edit', $doc->uuid);
     }
@@ -105,7 +108,11 @@ class DocumentsController extends Controller
      */
     public function destroy(Request $request, $uuid)
     {
-        $request->user()->documents()->uuid($uuid)->delete();
+        $document = $request->user()->documents()->uuid($uuid)->firstOrFail();
+
+        $document->delete();
+
+        Flash::info("Document \"{$document->name}\" has been deleted.");
 
         return redirect()->route('documents.index');
     }
