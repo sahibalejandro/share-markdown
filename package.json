@@ -1,11 +1,16 @@
 {
   "private": true,
-  "dependencies": {
+  "devDependencies": {
     "factor-bundle": "^2.5.0",
     "gulp": "^3.8.8",
     "markdown-it": "^5.0.1",
     "vue": "^1.0.4",
     "vue-resource": "^0.1.16",
+    "babel-runtime": "^5.8.25",
+    "vue-hot-reload-api": "^1.2.0",
+    "vueify-insert-css": "^1.0.0"
+  },
+  "dependencies": {
     "laravel-elixir": "^3.0.0",
     "bootstrap-sass": "^3.0.0"
   }
