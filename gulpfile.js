@@ -28,7 +28,7 @@ elixir(function(mix) {
     );
 
     mix.browserSync({
-        proxy: 'markdown.dev'
+        proxy: 'md.sahib.dev'
     });
 
 });
