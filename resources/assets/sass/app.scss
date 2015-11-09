@@ -1,6 +1,10 @@
 @import "../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 @import "documents/edit";
 
+html, body {
+    height: 100%;
+}
+
 .page-header {
     margin-top: 20px;
 }

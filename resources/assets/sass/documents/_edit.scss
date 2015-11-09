@@ -24,18 +24,26 @@
     }
 }
 
+#editor {
+    display: flex;
+}
+
 /*
- * Document's editable content.
+ * Editor's panel (textarea or viewer)
  */
-.doc-content {
-    border: 1px solid $gray-lighter;
-    border-width: 0 1px 0 0;
-    color: $gray-light;
+.editor__panel {
+    flex: 1;
+    padding: 15px;
+}
 
-    width: 100%;
+/*
+ * Text area to write markdown code.
+ */
+.editor__text {
+    background-color: $gray-lighter;
+    border: none;
+    border-right: 1px solid black;
     resize: none;
-    height: 20em;
-
     &:focus {
         outline: none;
     }

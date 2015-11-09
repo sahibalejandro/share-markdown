@@ -28,17 +28,12 @@
 
         </div>
 
-        <div class="row">
+        <div id="editor">
+            <textarea class="editor__panel editor__text" v-model="content"></textarea>
 
-            <div class="col-sm-6">
-                <textarea v-model="content" class="doc-content">{{ $doc->content }}</textarea>
-            </div>
-
-            <div class="col-sm-6">
-                <div v-html="html"></div>
-            </div>
-
+            <div class="editor__panel editor__preview" v-html="html"></div>
         </div>
+
     </div>
 
 @stop
