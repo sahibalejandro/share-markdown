@@ -29,7 +29,7 @@
         </div>
 
         <div id="editor">
-            <textarea class="editor__panel editor__text" v-model="content"></textarea>
+            <textarea class="editor__panel editor__text" v-model="content">{{ $doc->content }}</textarea>
 
             <div class="editor__panel editor__preview" v-html="html"></div>
         </div>
