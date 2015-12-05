@@ -61,6 +61,10 @@ class DocumentsController extends Controller
     {
         $doc = Document::byUuid($uuid);
 
+        if (!$doc) {
+            abort(404);
+        }
+
         return view('documents.show', compact('doc'));
     }
 
